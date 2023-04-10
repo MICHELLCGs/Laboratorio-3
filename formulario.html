@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="formulariocambio.css" rel="stylesheet"/>
+    <title>Casa de cambio</title>
+    <script>
+        function convertir(){
+            var cant=parseInt(document.getElementById("cantidad").value);
+            var result=0;
+            var dolar=3.74;
+            var euro=4.07;
+            if (document.getElementById("usd").checked){
+                result=cant/dolar;
+                alert("El cambio de Soles a Dolares es "+ result);
+            } else if (document.getElementById("eur").checked){
+                result=cant/euro;
+                alert("El cambio de soles a Euros es " + result);
+            } else {
+                alert("No llenaste bien")
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Casa de cambio</h1>
+    <form>
+        <input type="radio" id="usd" name="moneda"> Dólar
+
+        <input class="a1" type="radio" id="eur" name="moneda" >Euro
+        <br>
+        <label >Ingrese monto:</label>
+        <br>
+        <input class="a1" type="number" id="cantidad" >
+        
+        <br>
+        <button class="a2" type="buttom" id="cotizar" value="cotizar" onclick="convertir()">Cotizar</button>
+    </form>
+</body>
+</html>
